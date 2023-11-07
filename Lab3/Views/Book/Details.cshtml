@@ -1,0 +1,14 @@
+﻿@model Book
+
+<h2>Szczegóły ksiązki</h2>
+
+<div>
+    <p>Tytuł: @Model.Title</p>
+    <p>Autor: @Model.Author</p>
+    <p>Liczba stron: @Model.PageCount</p>
+    <p>ISBN: @Model.ISBN</p>
+    <p>Rok wydania: @Model.YearPublished</p>
+    <p>Wydawnictwo: @Model.Publisher</p>
+</div>
+
+<a asp-action="Index" asp-controller="Book" class="btn btn-secondary">Wróć</a>

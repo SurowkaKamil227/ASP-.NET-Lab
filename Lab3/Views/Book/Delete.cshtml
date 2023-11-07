@@ -1,0 +1,21 @@
+﻿@model Book
+
+<h2>Usuń książkę</h2>
+
+<div>
+    <h4>Czy na pewno chcesz usunąć tę książkę?</h4>
+    <h4>Tytuł: @Model.Title</h4>
+    <h4>Autor: @Model.Author</h4>
+    <h4>Liczba stron: @Model.PageCount</h4>
+    <h4>ISBN: @Model.ISBN</h4>
+    <h4>Rok wydania: @Model.YearPublished</h4>
+    <h4>Wydawnictwo: @Model.Publisher</h4>
+</div>
+
+<form asp-action="Delete" asp-controller="Book" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <input type="submit" value="Usuń" class="btn btn-danger" />
+        <a asp-action="Index" asp-controller="Book" class="btn btn-secondary">Anuluj</a>
+    </div>
+</form>

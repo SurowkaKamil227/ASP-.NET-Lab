@@ -1,0 +1,18 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Usuń kontakt";
+}
+
+<h2>Czy na pewno chcesz usunąć ten kontakt?</h2>
+<div>
+    <h4>Imię: @Model.Name</h4>
+    <h4>Email: @Model.Email</h4>
+    <h4>Numer telefonu: @Model.Phone</h4>
+    <h4>Data urodzenia: @Model.Birth</h4>
+</div>
+
+<form asp-action="Delete" asp-controller="Contact" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" asp-controller="Contact" class="btn btn-secondary">Anuluj</a>
+</form>

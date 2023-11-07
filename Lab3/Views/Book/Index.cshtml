@@ -1,0 +1,36 @@
+﻿@model List<Book>
+
+<h1>Lista książek</h1>
+<a class="btn btn-primary" asp-controller="Book" asp-action="Create">Dodaj książkę</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Liczba stron</th>
+            <th>ISBN</th>
+            <th>Rok wydania</th>
+            <th>Wydawnictwo</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.PageCount</td>
+                <td>@book.ISBN</td>
+                <td>@book.YearPublished</td>
+                <td>@book.Publisher</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id">Edytuj</a>
+                    <a class="btn btn-outline-info" asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">Szczegóły</a>
+                    <a class="btn btn-outline-danger" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
